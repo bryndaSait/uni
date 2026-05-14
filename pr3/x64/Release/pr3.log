@@ -1,0 +1,61 @@
+﻿  func.cpp
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(41,15): error C2511: void CVector::out(void) const: перегруженная функция-член не найдена в "CVector"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(6,7):
+       см. объявление "CVector"
+  
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(42,21): error C2597: недопустимая ссылка на нестатический член "CVector::size"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(13,6):
+       см. объявление "CVector::size"
+      C:\Users\User\source\repos2\pr3\pr3\func.cpp(42,21):
+      контекст создания экземпляра шаблона (сначала самый старый)
+          C:\Users\User\source\repos2\pr3\pr3\func.cpp(42,7):
+          выполняется компиляция ссылки на экземпляр шаблон функции "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::error_code &)"
+  
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(43,22): error C2597: недопустимая ссылка на нестатический член "CVector::size"
+      C:\Users\User\source\repos2\pr3\pr3\func.cpp(43,22):
+       см. объявление "CVector::size"
+  
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(43,22): error C3867: "CVector::size": нестандартный синтаксис; используйте "&", чтобы создать указатель на член
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(43,22): error C2568: <: не удается разрешить перегрузку функции
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(44,11): error C2597: недопустимая ссылка на нестатический член "CVector::data"
+      C:\Users\User\source\repos2\pr3\pr3\func.cpp(44,11):
+       см. объявление "CVector::data"
+  
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(44,11): error C3867: "CVector::data": нестандартный синтаксис; используйте "&", чтобы создать указатель на член
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(44,11): error C2568: [: не удается разрешить перегрузку функции
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(152,25): error C2248: CVector::size: невозможно обратиться к private член, объявленному в классе "CVector"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(13,6):
+       см. объявление "CVector::size"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(6,7):
+       см. объявление "CVector"
+  
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(153,26): error C2248: CVector::size: невозможно обратиться к private член, объявленному в классе "CVector"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(13,6):
+       см. объявление "CVector::size"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(6,7):
+       см. объявление "CVector"
+  
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(154,15): error C2248: CVector::data: невозможно обратиться к private член, объявленному в классе "CVector"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(14,10):
+       см. объявление "CVector::data"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(6,7):
+       см. объявление "CVector"
+  
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(158,25): error C2248: CVector::size: невозможно обратиться к private член, объявленному в классе "CVector"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(13,6):
+       см. объявление "CVector::size"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(6,7):
+       см. объявление "CVector"
+  
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(159,26): error C2248: CVector::size: невозможно обратиться к private член, объявленному в классе "CVector"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(13,6):
+       см. объявление "CVector::size"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(6,7):
+       см. объявление "CVector"
+  
+C:\Users\User\source\repos2\pr3\pr3\func.cpp(160,15): error C2248: CVector::data: невозможно обратиться к private член, объявленному в классе "CVector"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(14,10):
+       см. объявление "CVector::data"
+      C:\Users\User\source\repos2\pr3\pr3\header.h(6,7):
+       см. объявление "CVector"
+  
