@@ -9,7 +9,7 @@ class CVector {
 	friend CVector dif(const CVector& v1, const CVector& v2);
 	friend double scalar(const CVector& v1, const CVector& v2);
 
-private:
+protected:
 	int size;
 	double* data;
 
@@ -49,14 +49,14 @@ double operator*(const CVector& v1, const CVector& v2);
 
 class CVector2 :public CVector {
 public:
-	CVector2(int s = 0, double* arr = nullptr);
 	CVector2(const CVector2& other);
+	CVector2(int size = 0, double* data = nullptr);
 	void out();
 };
 class CVector3 :public CVector {
 public:
-	CVector3(int s = 0, double* arr = nullptr);
 	CVector3(const CVector3& other);
+	CVector3(int size = 0, double* data = nullptr);
 	void vout();
 };
 

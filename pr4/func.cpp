@@ -38,12 +38,12 @@ void CVector::copy(const CVector& other) {
 	copy(other.size, other.data);
 }
 
-void CVector::out() const {
-	cout << "Num: " << size << " Data: ";
-	for (int i = 0; i < size; i++) {
-		cout << data[i] << " ";
-	}
-}
+//void CVector::out() const {
+//cout << "Num: " << size << " Data: ";
+//for (int i = 0; i < size; i++) {
+//	cout << data[i] << " ";
+//}
+//}
 
 void CVector::clear() {
 	if (data != nullptr) delete[] data;
@@ -148,12 +148,24 @@ double CVector::operator()() const {
 	return module();
 }
 
+void CVector::vout(){
+	out();
+}
+	CVector2::CVector2(const CVector2& other) : CVector(other){}
+	CVector2::CVector2(int size, double* data) : CVector(size, data){}
+
 void CVector2::out() {
 	cout << "Num: " << this->size << " Data: ";
 	for (int i = 0; i < this->size; i++) {
 		cout << this->data[i] << " ";
 	}
 };
+	CVector3::CVector3(const CVector3& other) : CVector(other){}
+	CVector3::CVector3(int size, double* data) : CVector(size, data){}
+
+
+	
+
 void CVector3::vout() {
 	cout << "Num: " << this->size << " Data: ";
 	for (int i = 0; i < this->size; i++) {
