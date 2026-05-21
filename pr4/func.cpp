@@ -1,4 +1,4 @@
-#include "header.h"
+#include "Header.h"
 #include <cmath>
 #include <iostream>
 
@@ -148,27 +148,35 @@ double CVector::operator()() const {
 	return module();
 }
 
-void CVector::vout(){
+void CVector::out() const {
+	cout << "Num: " << size << " Data: ";
+	for (int i = 0; i < size; i++) {
+		cout << data[i] << " ";
+	}
+}
+
+void CVector::vout() const {
 	out();
 }
-	CVector2::CVector2(const CVector2& other) : CVector(other){}
-	CVector2::CVector2(int size, double* data) : CVector(size, data){}
 
-void CVector2::out() {
-	cout << "Num: " << this->size << " Data: ";
+CVector2::CVector2(const CVector2& other) : CVector(other) {}
+CVector2::CVector2(int s, double* arr) : CVector(s, arr) {}
+
+void CVector2::out() const {
+	cout << "Num: " << this->size << endl;
 	for (int i = 0; i < this->size; i++) {
-		cout << this->data[i] << " ";
+		cout << i + 1 << ": " << this->data[i] << endl;
 	}
 };
-	CVector3::CVector3(const CVector3& other) : CVector(other){}
-	CVector3::CVector3(int size, double* data) : CVector(size, data){}
+CVector3::CVector3(const CVector3& other) : CVector(other) {}
+CVector3::CVector3(int s, double* arr) : CVector(s, arr) {}
 
 
-	
 
-void CVector3::vout() {
-	cout << "Num: " << this->size << " Data: ";
+
+void CVector3::vout() const {
+	cout << "Num: " << this->size << endl;
 	for (int i = 0; i < this->size; i++) {
-		cout << this->data[i] << " ";
+		cout << i + 1 << ": " << this->data[i] << endl;
 	}
 };
