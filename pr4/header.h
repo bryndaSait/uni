@@ -23,8 +23,8 @@ public:
 	void copy(int s, double* arr);
 	void copy(const CVector& other);
 
-	void out();
-	virtual void vout();
+	void out() const;
+	virtual void vout() const;
 	void clear();
 
 	double module() const;
@@ -41,7 +41,7 @@ public:
 	double operator()() const;
 
 
-	
+
 };
 CVector operator+(const CVector& v1, const CVector& v2);
 CVector operator-(const CVector& v1, const CVector& v2);
@@ -50,14 +50,14 @@ double operator*(const CVector& v1, const CVector& v2);
 class CVector2 :public CVector {
 public:
 	CVector2(const CVector2& other);
-	CVector2(int size = 0, double* data = nullptr);
-	void out();
+	CVector2(int s = 0, double* arr = nullptr);
+	void out() const;
 };
 class CVector3 :public CVector {
 public:
 	CVector3(const CVector3& other);
-	CVector3(int size = 0, double* data = nullptr);
-	void vout();
+	CVector3(int s = 0, double* arr = nullptr);
+	virtual void vout() const override; // override явно показывает переопределение функции родительского класса
 };
 
 #endif
