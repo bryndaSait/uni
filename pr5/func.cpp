@@ -15,16 +15,26 @@ CVector::CVector(int s, double* arr) : size(s), data(arr) {
 }
 
 CVector::CVector(const CVector& other) : size(other.size), data(other.data) {
+	cout << "copy constructor" << endl;
 	init();
 	copy(other);
 }
 
-CVector::CVector(CVector&& other) {
+CVector::CVector(CVector&& other) noexcept{ //
+	cout << "move constructor" << endl;
 	size = other.size;
 	data = other.data;
-	other.size = 0;
-	other.data = 0;
+	other.init();
 }
+int CVector::move(CVector& other) {                         // move
+	if (data == other.data) return size;
+	clear();
+	size = other.size;
+	data = other.data;
+	other.init();
+	return size;
+}
+
 
 CVector::~CVector() {
 	clear();
@@ -108,21 +118,20 @@ double scalar(const CVector& v1, const CVector& v2) {
 	return result;
 }
 CVector& CVector::operator=(const CVector& other) {
+	cout << "copy operator=" << endl;
 	if (this != &other) {
 		copy(other);
 	}
 	return *this;
 }
-CVector& CVector::operator=(CVector&& other) {
-	if (&other != this)     // избегаем самоприсваивания
-	{
-		delete data;        // освобождаем память текущего объекта
-		size = other.size;
-		data = other.data;  // копируем указатель из перемещаемого объекта в текущий
-		other.data = nullptr; // сбрасываем значение указателя в перемещаемом объекте
-		other.size = 0;
+
+CVector& CVector::operator=(CVector&& other) noexcept{
+	cout << "move operator=" << endl;
+	if (this != &other) {
+		move(other);
 	}
 	return *this;
+
 }
 double& CVector::operator[](int index) {
 	return data[index];
@@ -162,31 +171,10 @@ void CVector::out() const {
 	cout << "Num: " << size << " Data: ";
 	for (int i = 0; i < size; i++) {
 		cout << data[i] << " ";
-	}
+	}cout << endl;
 }
 
 void CVector::vout() const {
 	out();
 }
 
-CVector2::CVector2(const CVector2& other) : CVector(other) {}
-CVector2::CVector2(int s, double* arr) : CVector(s, arr) {}
-
-void CVector2::out() const {
-	cout << "Num: " << this->size << endl;
-	for (int i = 0; i < this->size; i++) {
-		cout << i + 1 << ": " << this->data[i] << endl;
-	}
-};
-CVector3::CVector3(const CVector3& other) : CVector(other) {}
-CVector3::CVector3(int s, double* arr) : CVector(s, arr) {}
-
-
-
-
-void CVector3::vout() const {
-	cout << "Num: " << this->size << endl;
-	for (int i = 0; i < this->size; i++) {
-		cout << i + 1 << ": " << this->data[i] << endl;
-	}
-};
